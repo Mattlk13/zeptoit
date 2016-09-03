@@ -7,7 +7,33 @@ var settings = {
 
 // run any initial setup, return true when complete
 function run_setup(){
+	if(hasZepto()){
+			console.log('ZeptoIt:: ZeptoJs already loaded')
+	}
+	else {
+		console.log('ZeptoIt:: ZeptoJs not found on page')
+		addZepto()
+	}
+	console.log('ZeptoIt:: Setup Complete')
 	return true
+}
+
+function addZepto(){
+	var s, url
+	url = chrome.extension.getURL("/assets/js/lib/zepto.min.js")
+	s = document.createElement('script')
+	s.src=url
+	$('head').append(s)
+
+	console.log('ZeptoIt:: ZeptoJs added to page')
+}
+
+function hasZepto(){
+	return $('script').filter(function(){
+		var src = $(this).attr('src')
+		if(src) return src.indexOf('zepto') >= 0
+		return false
+	}).length > 0
 }
 
 function init_check(){
