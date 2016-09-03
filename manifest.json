@@ -24,7 +24,7 @@
       "assets/js/lib/zepto.min.js",
       "assets/js/init.js"
     ],
-    "all_frames": true
+    "all_frames": false
     }],
 
     "web_accessible_resources": [
