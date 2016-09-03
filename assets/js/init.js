@@ -32,3 +32,12 @@ Zepto(function ($) {
 		}
 	}, 20)
 })
+
+var _version = _version || (function get_version() {
+	_version = chrome.runtime.getManifest().version
+	return _version
+}())
+
+;(function loaded() {
+	chrome.runtime.sendMessage({ category: 'page', action: 'view', label: 'extension loaded', value: _version})
+}())
