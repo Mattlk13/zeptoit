@@ -14,6 +14,7 @@
 
   "content_scripts": [{
     "matches": [
+      "http://*/*",
       "https://*/*"
     ],
     "css": [
@@ -23,17 +24,20 @@
       "assets/js/lib/zepto.min.js",
       "assets/js/init.js"
     ],
-    "all_frames": false
+    "all_frames": true
     }],
+
     "web_accessible_resources": [
-      "assets/html/*"
-      ,"assets/css/*"
-      ,"assets/scripts/*"
+      "assets/html/*",
+      "assets/css/*",
+      "assets/scripts/*"
     ],
+
     "permissions": [
       "tabs"
     ],
+
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
 
     "manifest_version": 2
-  }
+}
