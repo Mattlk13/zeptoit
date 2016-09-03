@@ -6,7 +6,9 @@ var watch_url = ""
 
 ;( function setup () {
 
-	injectGA()
+	if(ga_id !== "UA-xxx-1"){
+		injectGA()
+	}
 
 	chrome.runtime.onInstalled.addListener( function ( details ) {
 		if ( details.reason === "install" ) {
@@ -31,23 +33,22 @@ var watch_url = ""
 
 function injectGA(){
 
-	if(ga_id !== "UA-xxx-1"){
-		_gaq = _gaq || []
-		_gaq.push(['_setAccount', ga_id])
-		_gaq.push(['_trackPageview'])
+	_gaq = _gaq || []
+	_gaq.push(['_setAccount', ga_id])
+	_gaq.push(['_trackPageview'])
 
-		;(function() {
+	;(function() {
 
-			var ga, s
-			ga = document.createElement('script')
-			ga.type = 'text/javascript'
-			ga.async = true
-			ga.src = 'https://ssl.google-analytics.com/ga.js'
+		var ga, s
+		ga = document.createElement('script')
+		ga.type = 'text/javascript'
+		ga.async = true
+		ga.src = 'https://ssl.google-analytics.com/ga.js'
 
-			s = document.getElementsByTagName('script')[0]
-			s.parentNode.insertBefore(ga, s)
-		}
+		s = document.getElementsByTagName('script')[0]
+		s.parentNode.insertBefore(ga, s)
+	}
 
-	})()
+)()
 
 }
