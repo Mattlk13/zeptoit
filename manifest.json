@@ -1,0 +1,39 @@
+{
+  "name" : "Template Extension",
+  "version" : "0.0.1",
+  "short_name" : "Template Extension",
+  "description" : "Template Extension",
+
+  "background": {
+    "scripts": [
+      "assets/js/background.js"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "persistent": true
+  },
+
+  "content_scripts": [{
+    "matches": [
+      "https://*/*"
+    ],
+    "css": [
+      "assets/css/main.css"
+    ],
+    "js": [
+      "assets/js/lib/zepto.min.js",
+      "assets/js/init.js"
+    ],
+    "all_frames": false
+    }],
+    "web_accessible_resources": [
+      "assets/html/*"
+      ,"assets/css/*"
+      ,"assets/scripts/*"
+    ],
+    "permissions": [
+      "tabs"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+
+    "manifest_version": 2
+  }
