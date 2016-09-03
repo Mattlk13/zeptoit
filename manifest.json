@@ -1,8 +1,8 @@
 {
-  "name" : "Template Extension",
+  "name" : "ZeptoIt",
   "version" : "0.0.1",
-  "short_name" : "Template Extension",
-  "description" : "Template Extension",
+  "short_name" : "ZeptoIt",
+  "description" : "Adds ZeptoJs to every web page. For developers that like to hack on pages.",
 
   "background": {
     "scripts": [
