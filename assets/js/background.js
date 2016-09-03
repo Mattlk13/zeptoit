@@ -2,7 +2,6 @@
 
 var _gaq
 var ga_id = "UA-83645427-1"
-var watch_url = ""
 
 ;( function setup () {
 
@@ -17,12 +16,6 @@ var watch_url = ""
 				active: true
 			})
 		}
-	})
-
-	chrome.tabs.query({ url: watch_url }, function ( tabs ) {
-		tabs.forEach( function ( tab ) {
-			chrome.tabs.reload( tab.id )
-		})
 	})
 
 	chrome.runtime.onMessage.addListener(function( event, sender, sendResponse ) {

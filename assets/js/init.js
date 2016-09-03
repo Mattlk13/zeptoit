@@ -1,7 +1,6 @@
 'use strict'
 
 var settings = {
-	watch_url: "",
 	check_lock: false,
 	setup_complete: false
 }
