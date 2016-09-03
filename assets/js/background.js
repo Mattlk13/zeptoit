@@ -3,6 +3,11 @@
 var _gaq
 var ga_id = "UA-83645427-1"
 
+var _version = _version || (function get_version() {
+	_version = chrome.runtime.getManifest().version
+	return _version
+}())
+
 ;( function setup () {
 
 	if(ga_id !== "UA-xxx-1"){
