@@ -1,7 +1,7 @@
 'use strict'
 
 var _gaq
-var ga_id = "UA-xxx-1"
+var ga_id = "UA-83645427-1"
 var watch_url = ""
 
 ;( function setup () {
