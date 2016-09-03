@@ -30,7 +30,7 @@
     "web_accessible_resources": [
       "assets/html/*",
       "assets/css/*",
-      "assets/scripts/*"
+      "assets/js/lib/zepto.min.js"
     ],
 
     "permissions": [
